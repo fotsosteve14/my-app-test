@@ -1,0 +1,6 @@
+import { useCases } from "$lib/infrastructure/container";
+import type { PageServerLoad } from "./$types";
+
+export const load: PageServerLoad = async () => {
+  return { users: await useCases.listUsers() };
+};
